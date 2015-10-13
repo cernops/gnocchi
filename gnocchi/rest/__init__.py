@@ -60,11 +60,11 @@ def get_user_and_project():
     # but the policy module won't see the equality in the string
     # representations.
     user_id = headers.get("X-User-Id")
-    if user_id:
-        try:
-            user_id = six.text_type(uuid.UUID(user_id))
-        except Exception:
-            abort(400, "Malformed X-User-Id")
+    # if user_id:
+    #     try:
+    #         user_id = six.text_type(uuid.UUID(user_id))
+    #     except Exception:
+    #         abort(400, "Malformed X-User-Id")
 
     project_id = headers.get("X-Project-Id")
     if project_id:
